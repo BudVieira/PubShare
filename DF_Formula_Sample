@@ -1,0 +1,10 @@
+IF (( Invoice_Total__c > 1000), ( 
+IF(CONTAINS( Contact__r.Country__c , "United States") &&( Contact__r.AccntRPE__c > 500000), "US Portfolio", 
+IF(CONTAINS( Contact__r.Country__c , "United States") &&( Contact__r.AccntRPE__c < 500000), "US Non-Portfolio", 
+IF(CONTAINS( Contact__r.Country__c , "Canada") &&( Contact__r.AccntRPE__c > 400000), "CAN Portfolio", 
+IF(CONTAINS( Contact__r.Country__c , "Canada") &&( Contact__r.AccntRPE__c < 400000), "CAN Non-Portfolio", 
+"Other" 
+) 
+) 
+) 
+)), NULL)
